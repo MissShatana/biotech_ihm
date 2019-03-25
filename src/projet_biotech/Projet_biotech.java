@@ -6,11 +6,8 @@
 package projet_biotech;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -18,24 +15,16 @@ import javafx.stage.Stage;
  * @author Natashaa
  */
 public class Projet_biotech extends Application {
-    
+    private Connexion_form connexion;
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
+        primaryStage.setTitle("gestionnaire d'étudiants Gphy");
+        Group root,menu;
+        root= new Group();
+        Scene scene = new Scene(root,1300,700);
+        menu = new Group();
+        connexion= new Connexion_form(this);
+        root.getChildren().add(connexion);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
